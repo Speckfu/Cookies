@@ -4,6 +4,7 @@ import at.paxfu.cookies.Cookies;
 import at.paxfu.cookies.managers.Messages;
 import at.paxfu.cookies.managers.Settings;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
@@ -16,7 +17,6 @@ public class LobbyCountdown implements Settings, Messages {
     //Values for lobby countdown
     public int count = Lobby_CountdownTime;
     private static int schedulerID = 1;
-    public boolean isRunning = false;
 
     // Start method
     public void run() {
@@ -44,6 +44,7 @@ public class LobbyCountdown implements Settings, Messages {
                     for (Player all : Bukkit.getOnlinePlayers()) {
                         all.playSound(all.getEyeLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.1F, 0.1F);
                         all.getInventory().clear();
+                        all.setGameMode(GameMode.SURVIVAL);
                     }
                     //cancel task
                     Bukkit.getScheduler().cancelTask(schedulerID);
@@ -58,13 +59,10 @@ public class LobbyCountdown implements Settings, Messages {
     }
 
     public void stop() {
-        if(isRunning) {
             Bukkit.getScheduler().cancelTask(schedulerID);
-            isRunning = false;
-            count = 30;
+            count = Lobby_CountdownTime;
             for(Player all : Bukkit.getOnlinePlayers()) {
-                all.setLevel(30);
+                all.setLevel(count);
             }
-        }
     }
 }

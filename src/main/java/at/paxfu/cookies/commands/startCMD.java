@@ -19,16 +19,12 @@ public class startCMD implements CommandExecutor, Settings, Messages, Permission
             if(sender instanceof Player) {
                 Player player = (Player) sender;
                 if(player.hasPermission(PERM_forceStart)) {
-                    if(Cookies.getInstance().lobbyCountdown.isRunning) {
                         if(Cookies.getInstance().lobbyCountdown.count > Lobby_CountdownTime_Force) {
                             Cookies.getInstance().lobbyCountdown.count = Lobby_CountdownTime_Force;
                             player.sendMessage(Lobby_Countdown_Forced_MSG);
                         }else {
                             player.sendMessage(Lobby_Countdown_Force_Too_Late);
                         }
-                    }else {
-                        player.sendMessage(Lobby_Countdown_Force_Not_Running);
-                    }
                 }else {
                     player.sendMessage(Error_NoPerm);
                 }

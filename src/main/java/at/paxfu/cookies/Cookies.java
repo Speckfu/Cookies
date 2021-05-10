@@ -13,6 +13,7 @@ import at.paxfu.cookies.listeners.PlayerInteractListener;
 import at.paxfu.cookies.managers.ConfigManager;
 import at.paxfu.cookies.managers.Messages;
 import at.paxfu.cookies.managers.TeamManager;
+import at.paxfu.cookies.mapmanager.MapManager;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -34,6 +35,7 @@ public final class Cookies extends JavaPlugin implements Messages {
     public LobbyCountdown lobbyCountdown;
     public TeamInventory teamInventory;
     public TeamManager teamManager;
+    public MapManager mapManager;
 
     //Register Configs
     private ConfigManager settings;
@@ -51,6 +53,7 @@ public final class Cookies extends JavaPlugin implements Messages {
         lobbyCountdown = new LobbyCountdown();
         teamInventory = new TeamInventory();
         teamManager = new TeamManager();
+        mapManager = new MapManager();
     }
 
     //Set up configs and other stuff

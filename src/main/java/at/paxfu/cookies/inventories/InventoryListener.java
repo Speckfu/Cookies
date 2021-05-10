@@ -29,67 +29,36 @@ public class InventoryListener implements Listener {
             int slot = event.getRawSlot();
             Player player = (Player) event.getWhoClicked();
 
-            switch (slot) {
-                case 10:
-                    if(!Cookies.getInstance().teamManager.team1.contains(player)) {
-                        if(!Cookies.getInstance().teamManager.isUserInTeam(player)) {
+                switch (slot) {
+                    case 10:
+                        if (!Cookies.getInstance().teamManager.team1.contains(player)) {
                             Cookies.getInstance().teamManager.addUserToTeam(player, "team1");
-                            TeamInventory.getInventory().setItem(10, TeamInventory.team1());
-                        } else {
-                            Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                            Cookies.getInstance().teamManager.addUserToTeam(player, "team1");
+                            player.getOpenInventory().close();
                             TeamInventory.getInventory().setItem(10, TeamInventory.team1());
                         }
-                    } else {
-                        Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                        TeamInventory.getInventory().setItem(10, TeamInventory.team1());
-                    }
-                    break;
-                case 12:
-                    if(!Cookies.getInstance().teamManager.team2.contains(player)) {
-                        if(!Cookies.getInstance().teamManager.isUserInTeam(player)) {
+                        break;
+                    case 12:
+                        if (!Cookies.getInstance().teamManager.team2.contains(player)) {
                             Cookies.getInstance().teamManager.addUserToTeam(player, "team2");
-                            TeamInventory.getInventory().setItem(12, TeamInventory.team2());
-                        } else {
-                            Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                            Cookies.getInstance().teamManager.addUserToTeam(player, "team2");
+                            player.getOpenInventory().close();
                             TeamInventory.getInventory().setItem(12, TeamInventory.team2());
                         }
-                    } else {
-                        Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                        TeamInventory.getInventory().setItem(12, TeamInventory.team2());
-                    }
-                    break;
-                case 14:
-                    if(!Cookies.getInstance().teamManager.team3.contains(player)) {
-                        if(!Cookies.getInstance().teamManager.isUserInTeam(player)) {
+                        break;
+                    case 14:
+                        if (!Cookies.getInstance().teamManager.team3.contains(player)) {
                             Cookies.getInstance().teamManager.addUserToTeam(player, "team3");
-                            TeamInventory.getInventory().setItem(14, TeamInventory.team3());
-                        } else {
-                            Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                            Cookies.getInstance().teamManager.addUserToTeam(player, "team3");
+                            player.getOpenInventory().close();
                             TeamInventory.getInventory().setItem(14, TeamInventory.team3());
                         }
-                    } else {
-                        Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                        TeamInventory.getInventory().setItem(14, TeamInventory.team3());
-                    }
-                    break;
-                case 16:
-                    if(!Cookies.getInstance().teamManager.team4.contains(player)) {
-                        if(!Cookies.getInstance().teamManager.isUserInTeam(player)) {
+                        break;
+                    case 16:
+                        if (!Cookies.getInstance().teamManager.team4.contains(player)) {
                             Cookies.getInstance().teamManager.addUserToTeam(player, "team4");
-                            TeamInventory.getInventory().setItem(16, TeamInventory.team4());
-                        } else {
-                            Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                            Cookies.getInstance().teamManager.addUserToTeam(player, "team4");
+                            player.getOpenInventory().close();
                             TeamInventory.getInventory().setItem(16, TeamInventory.team4());
                         }
-                    } else {
-                        Cookies.getInstance().teamManager.removeUserOfTeam(player);
-                        TeamInventory.getInventory().setItem(16, TeamInventory.team4());
-                    }
-                    break;
+                        break;
+                }
             }
         }
     }

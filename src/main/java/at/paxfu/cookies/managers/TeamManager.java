@@ -51,6 +51,9 @@ public class TeamManager implements Messages, Settings, Permissions {
     public void addUserToTeam(Player player, String team) {
         if(team.equalsIgnoreCase("team1")) {
             if(team1.size() < 2) {
+                if(isUserInTeam(player)) {
+                    removeUserOfTeam(player);
+                }
                 team1.add(player);
                 playerTeam.put(player, "team1");
                 player.sendMessage(Team_Join_Success.replace("%TEAM%", Team_Team1_Name));
@@ -68,6 +71,9 @@ public class TeamManager implements Messages, Settings, Permissions {
             }
         }else if(team.equalsIgnoreCase("team2")) {
             if(team2.size() < 2) {
+                if(isUserInTeam(player)) {
+                    removeUserOfTeam(player);
+                }
                 team2.add(player);
                 playerTeam.put(player, "team2");
                 player.sendMessage(Team_Join_Success.replace("%TEAM%", Team_Team2_Name));
@@ -85,6 +91,9 @@ public class TeamManager implements Messages, Settings, Permissions {
             }
         }else if(team.equalsIgnoreCase("team3")) {
             if(team3.size() < 2) {
+                if(isUserInTeam(player)) {
+                    removeUserOfTeam(player);
+                }
                 team3.add(player);
                 playerTeam.put(player, "team3");
                 player.sendMessage(Team_Join_Success.replace("%TEAM%", Team_Team3_Name));
@@ -102,6 +111,9 @@ public class TeamManager implements Messages, Settings, Permissions {
             }
         }else if(team.equalsIgnoreCase("team4")) {
             if(team4.size() < 2) {
+                if(isUserInTeam(player)) {
+                    removeUserOfTeam(player);
+                }
                 team4.add(player);
                 playerTeam.put(player, "team4");
                 player.sendMessage(Team_Join_Success.replace("%TEAM%", Team_Team4_Name));

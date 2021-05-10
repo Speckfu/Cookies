@@ -16,7 +16,7 @@ public interface Settings {
     int General_MaxPlayers = Cookies.getInstance().getSettings().getIntOrSetDefault("MaxPlayers", 8);
 
     //Lobby Settings
-    int Lobby_CountdownTime = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time", 30);
+    int Lobby_CountdownTime = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time.Default", 30);
     int Lobby_CountdownTime_Force = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time.Force.Time", 10);
     boolean Lobby_CountdownTime_Force_Enabled = Cookies.getInstance().getSettings().getBooleanOrSetDefault("Lobby.Countdown.Time.Force.Enabled", true);
 
@@ -25,6 +25,7 @@ public interface Settings {
 
     //Teams Settings
     boolean Team_Item_Enabled = Cookies.getInstance().getSettings().getBooleanOrSetDefault("Teams.Item.Enabled", true);
+    boolean Team_Inventory_Use_Shoes = Cookies.getInstance().getSettings().getBooleanOrSetDefault("Teams.Inventory.UseShoes", true);
     String Team_Item_Name = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getSettings().getStringOrSetDefault("Teams.Item.Name", "&eTeams"));
     int Team_Item_Slot = Cookies.getInstance().getSettings().getIntOrSetDefault("Teams.Item.Slot", 1);
     String Team_GUI_Name = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getSettings().getStringOrSetDefault("Teams.GUI.Name", "&eTeams"));

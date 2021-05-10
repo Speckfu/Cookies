@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -102,27 +103,75 @@ public class TeamInventory implements Settings, Messages {
         return is;
     }
     public static ItemStack team2() {
-        ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team2_Color), 1);
-        ItemMeta im = is.getItemMeta();
-        im.setDisplayName(getTeamColorAsString(Team_Team2_Color) + Team_Team2_Name);
-        im.setLore(Collections.singletonList("§e" + Cookies.getInstance().teamManager.team2.size() + " / 2"));
-        is.setItemMeta(im);
-        return is;
+        if(!Team_Inventory_Use_Shoes) {
+            ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team2_Color), 1);
+            ItemMeta im = is.getItemMeta();
+            im.setDisplayName(getTeamColorAsString(Team_Team2_Color) + Team_Team2_Name);
+
+
+            im.setLore(team2_lore());
+            im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            im.addItemFlags(ItemFlag.HIDE_DYE);
+            is.setItemMeta(im);
+            return is;
+        } else {
+            ItemStack is = new ItemStack(Material.LEATHER_BOOTS, 1);
+            LeatherArmorMeta im = (LeatherArmorMeta) is.getItemMeta();
+            im.setColor(getTeamColorAsColor(Team_Team2_Color));
+            im.setDisplayName(getTeamColorAsString(Team_Team2_Color) + Team_Team2_Name);
+
+
+            im.setLore(team2_lore());
+            is.setItemMeta(im);
+            return is;
+        }
     }
     public static ItemStack team3() {
-        ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team3_Color), 1);
-        ItemMeta im = is.getItemMeta();
-        im.setDisplayName(getTeamColorAsString(Team_Team3_Color) + Team_Team3_Name);
-        im.setLore(Collections.singletonList("§e" + Cookies.getInstance().teamManager.team3.size() + " / 2"));
-        is.setItemMeta(im);
-        return is;
+        if(!Team_Inventory_Use_Shoes) {
+            ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team3_Color), 1);
+            ItemMeta im = is.getItemMeta();
+            im.setDisplayName(getTeamColorAsString(Team_Team3_Color) + Team_Team3_Name);
+
+
+            im.setLore(team3_lore());
+            im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            im.addItemFlags(ItemFlag.HIDE_DYE);
+            is.setItemMeta(im);
+            return is;
+        } else {
+            ItemStack is = new ItemStack(Material.LEATHER_BOOTS, 1);
+            LeatherArmorMeta im = (LeatherArmorMeta) is.getItemMeta();
+            im.setColor(getTeamColorAsColor(Team_Team3_Color));
+            im.setDisplayName(getTeamColorAsString(Team_Team3_Color) + Team_Team3_Name);
+
+
+            im.setLore(team3_lore());
+            is.setItemMeta(im);
+            return is;
+        }
     }
     public static ItemStack team4() {
-        ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team4_Color), 1);
-        ItemMeta im = is.getItemMeta();
-        im.setDisplayName(getTeamColorAsString(Team_Team4_Color) + Team_Team4_Name);
-        im.setLore(Collections.singletonList("§e" + Cookies.getInstance().teamManager.team4.size() + " / 2"));
-        is.setItemMeta(im);
-        return is;
+        if(!Team_Inventory_Use_Shoes) {
+            ItemStack is = new ItemStack(getTeamColorAsWoolBlock(Team_Team4_Color), 1);
+            ItemMeta im = is.getItemMeta();
+            im.setDisplayName(getTeamColorAsString(Team_Team4_Color) + Team_Team4_Name);
+
+
+            im.setLore(team4_lore());
+            im.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            im.addItemFlags(ItemFlag.HIDE_DYE);
+            is.setItemMeta(im);
+            return is;
+        } else {
+            ItemStack is = new ItemStack(Material.LEATHER_BOOTS, 1);
+            LeatherArmorMeta im = (LeatherArmorMeta) is.getItemMeta();
+            im.setColor(getTeamColorAsColor(Team_Team4_Color));
+            im.setDisplayName(getTeamColorAsString(Team_Team4_Color) + Team_Team4_Name);
+
+
+            im.setLore(team4_lore());
+            is.setItemMeta(im);
+            return is;
+        }
     }
 }
