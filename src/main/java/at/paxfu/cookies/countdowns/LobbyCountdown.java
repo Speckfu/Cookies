@@ -1,6 +1,7 @@
 package at.paxfu.cookies.countdowns;
 
 import at.paxfu.cookies.Cookies;
+import at.paxfu.cookies.gamestates.GameStates;
 import at.paxfu.cookies.managers.Messages;
 import at.paxfu.cookies.managers.Settings;
 import org.bukkit.Bukkit;
@@ -49,8 +50,8 @@ public class LobbyCountdown implements Settings, Messages {
                     //cancel task
                     Bukkit.getScheduler().cancelTask(schedulerID);
 
-                    //SPIELSTART
-
+                    //change gamestate
+                    Cookies.getInstance().gameState = GameStates.INGAME;
                 }
 
                 //count down

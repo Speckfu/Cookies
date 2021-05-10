@@ -17,6 +17,11 @@ public interface Messages {
     String Error_LobbySpawn_Not_Found = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.NoLobbySpawn", "&cDer Lobby - Spawn existiert noch nicht!"));
     String Error_Console_Sender = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.NoConsoleSender", "&cNur ein Spieler kann dies ausführen!"));
 
+    String Error_Setup_World_NotExists = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.WorldNotExists", "&cDiese Welt gibt es nicht!"));
+
+    //Setup Messages
+    String Setup_Map_Created = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.MapCreated", "&7Du hast erfolgreich die Map &e%MAP% &7erstellt!"));
+
     //Lobby Messages
     String Lobby_JoinMSG = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("Lobby.JoinMessage", "&e%PLAYER% &7hat das Spiel betreten! [&e%PLAYERS%&7/&e%MAXPLAYERS%&7]"));
     String Lobby_QuitMSG = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("Lobby.QuitMessage", "&e%PLAYER% &7hat das Spiel verlassen! [&e%PLAYERS%&7/&e%MAXPLAYERS%&7]"));

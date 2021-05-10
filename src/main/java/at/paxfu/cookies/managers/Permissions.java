@@ -6,4 +6,5 @@ package at.paxfu.cookies.managers;
 public interface Permissions {
 
     String PERM_forceStart = "cookies.forcestart";
+    String PERM_setup = "cookies.setup";
 }

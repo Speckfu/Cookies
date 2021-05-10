@@ -24,10 +24,12 @@ public class InventoryListener implements Listener {
 
     @EventHandler
     public void onClick(InventoryClickEvent event) {
-        if(event.getInventory() == TeamInventory.getInventory()) {
+        if(Cookies.getInstance().gameState == GameStates.LOBBY) {
             event.setCancelled(true);
-            int slot = event.getRawSlot();
-            Player player = (Player) event.getWhoClicked();
+            if (event.getInventory() == TeamInventory.getInventory()) {
+                event.setCancelled(true);
+                int slot = event.getRawSlot();
+                Player player = (Player) event.getWhoClicked();
 
                 switch (slot) {
                     case 10:
