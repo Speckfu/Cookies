@@ -3,11 +3,9 @@ package at.paxfu.cookies.mapmanager;
 import at.paxfu.cookies.Cookies;
 import at.paxfu.cookies.managers.Messages;
 import at.paxfu.cookies.managers.Settings;
-import at.paxfu.cookies.managers.TeamManager;
 import org.bukkit.Location;
 
-import java.util.Collection;
-import java.util.List;
+
 
 /**
  * Created by paxfu on 10.05.2021.

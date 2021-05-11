@@ -19,4 +19,12 @@ public class Hotbar implements Settings {
         is.setItemMeta(im);
         return is;
     }
+
+    public static ItemStack vote() {
+        ItemStack is = new ItemStack(Material.PAPER, 1);
+        ItemMeta im = is .getItemMeta();
+        im.setDisplayName(Vote_Item_Name);
+        is.setItemMeta(im);
+        return is;
+    }
 }

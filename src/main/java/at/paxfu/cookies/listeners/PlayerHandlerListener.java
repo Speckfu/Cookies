@@ -7,12 +7,14 @@ import at.paxfu.cookies.gamestates.GameStates;
 import at.paxfu.cookies.inventories.Hotbar;
 import at.paxfu.cookies.managers.Messages;
 import at.paxfu.cookies.managers.Settings;
+import at.paxfu.cookies.mapmanager.VoteManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
@@ -44,6 +46,9 @@ public class PlayerHandlerListener implements Listener, Messages, Settings {
             player.getInventory().clear();
             if(Team_Item_Enabled) {
                 player.getInventory().setItem(Team_Item_Slot, Hotbar.teams());
+            }
+            if(Vote_Item_Enabled) {
+                player.getInventory().setItem(Vote_Item_Slot, Hotbar.vote());
             }
             if(Cookies.getInstance().alivePlayers.size() == General_MinPlayers) {
                 Cookies.getInstance().lobbyCountdown.run();
@@ -102,6 +107,13 @@ public class PlayerHandlerListener implements Listener, Messages, Settings {
 
     @EventHandler
     public void onDrop(PlayerDropItemEvent event) {
+        if(Cookies.getInstance().gameState == GameStates.LOBBY) {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlace(BlockPlaceEvent event) {
         if(Cookies.getInstance().gameState == GameStates.LOBBY) {
             event.setCancelled(true);
         }

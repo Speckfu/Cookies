@@ -17,6 +17,7 @@ public interface Settings {
     String Scoreboard_Title = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getSettings().getStringOrSetDefault("Scoreboard.Title", "&6&lCookies"));
 
     //Lobby Settings
+    String Lobby_Name = Cookies.getInstance().getSettings().getStringOrSetDefault("Lobby.World.Name", "lobby");
     int Lobby_CountdownTime = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time.Default", 30);
     int Lobby_CountdownTime_Force = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time.Force.Time", 10);
     boolean Lobby_CountdownTime_Force_Enabled = Cookies.getInstance().getSettings().getBooleanOrSetDefault("Lobby.Countdown.Time.Force.Enabled", true);
@@ -39,6 +40,10 @@ public interface Settings {
     String Team_Team4_Name = Cookies.getInstance().getSettings().getStringOrSetDefault("Teams.Team4.Name", "Gelb");
     String Team_Team4_Color = Cookies.getInstance().getSettings().getStringOrSetDefault("Teams.Team4.Color", "yellow");
 
+    // Vote Settings
+    boolean Vote_Item_Enabled = Cookies.getInstance().getSettings().getBooleanOrSetDefault("Vote.Item.Enabled", true);
+    String Vote_Item_Name = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getSettings().getStringOrSetDefault("Vote.Item.Name", "&eVote Map"));
+    int Vote_Item_Slot = Cookies.getInstance().getSettings().getIntOrSetDefault("Vote.Item.Slot", 3);
 
 
 }

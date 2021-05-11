@@ -17,10 +17,13 @@ public interface Messages {
     String Error_LobbySpawn_Not_Found = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.NoLobbySpawn", "&cDer Lobby - Spawn existiert noch nicht!"));
     String Error_Console_Sender = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.NoConsoleSender", "&cNur ein Spieler kann dies ausführen!"));
 
-    String Error_Setup_World_NotExists = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.WorldNotExists", "&cDiese Welt gibt es nicht!"));
+    String Error_Setup_World_NotExists = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.WorldNotExists", "&cDie Welt &e%WORLD% &cgibt es nicht!"));
+    String Error_Setup_Team_NotExists = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.TeamNotExists", "&cBitte benutze eine Zahl zwischen 1 und 4!"));
 
     //Setup Messages
-    String Setup_Map_Created = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.MapCreated", "&7Du hast erfolgreich die Map &e%MAP% &7erstellt!"));
+    String Setup_Map_Created = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.MapCreated", "&7Du hast &eerfolgreich &7die Map &e%MAP% &7erstellt!"));
+    String Setup_Team_Spawn_Created = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.TeamSpawnCreated", "&7Du hast &eerfolgreich &7den Spawn für das Team &e%TEAM% &7erstellt!"));
+    String Setup_Spectator_Spawn_Created = Prefix + " " + ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("General.Setup.SpectatorSpawnCreated", "&7Du hast &eerfolgreich &7den Spawn für die Spectator &7erstellt!"));
 
     //Lobby Messages
     String Lobby_JoinMSG = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getMessages().getStringOrSetDefault("Lobby.JoinMessage", "&e%PLAYER% &7hat das Spiel betreten! [&e%PLAYERS%&7/&e%MAXPLAYERS%&7]"));

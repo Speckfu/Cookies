@@ -7,7 +7,6 @@ import at.paxfu.cookies.gamestates.GameStates;
 import at.paxfu.cookies.inventories.InventoryListener;
 import at.paxfu.cookies.inventories.TeamInventory;
 import at.paxfu.cookies.listeners.BlockBreakListener;
-import at.paxfu.cookies.listeners.BlockPlaceListener;
 import at.paxfu.cookies.listeners.PlayerHandlerListener;
 import at.paxfu.cookies.listeners.PlayerInteractListener;
 import at.paxfu.cookies.managers.ConfigManager;
@@ -32,6 +31,8 @@ public final class Cookies extends JavaPlugin implements Messages {
     //Default values for cookies
     public ArrayList<Player> alivePlayers = new ArrayList<>();
     public ArrayList<Player> buildModePlayers = new ArrayList<>();
+
+    public String playingMap = "";
 
     public GameStates gameState;
     public LobbyCountdown lobbyCountdown;
@@ -59,6 +60,11 @@ public final class Cookies extends JavaPlugin implements Messages {
         teamInventory = new TeamInventory();
         teamManager = new TeamManager();
         mapManager = new MapManager();
+        voteManager = new VoteManager();
+
+        VoteManager.generateMapPool();
+        VoteManager.generateRandomMapPool(2);
+        playingMap = VoteManager.randomMaps.get(0).getName();
     }
 
     //Set up configs and other stuff
@@ -81,7 +87,6 @@ public final class Cookies extends JavaPlugin implements Messages {
     private void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new PlayerHandlerListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
-        Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
     }

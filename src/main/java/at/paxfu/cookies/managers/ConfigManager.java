@@ -212,12 +212,6 @@ public class ConfigManager {
         save();
     }
 
-//    public void removeLocation( String path) {
-//        path = startPath + "Locations.IslandSpawns." + path;
-//        configuration.set(path, null);
-//        save();
-//    }
-
   public Location getLocation(String path){
         path = startPath+path;
         if (getString(String.format("%s.world", path))==null)return null;
