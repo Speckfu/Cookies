@@ -227,9 +227,9 @@ public class ConfigManager {
         int x = getInt(String.format("%s.x", path));
         int y = getInt(String.format("%s.y", path));
         int z = getInt(String.format("%s.z", path));
-        float yaw = getFloat(String.format("%s.yaw", path));
-        float pitch = getFloat(String.format("%s.pitch", path));
-        return new Location(world, x, y, z,yaw,pitch);
+//        float yaw = getFloat(String.format("%s.yaw", path));
+//        float pitch = getFloat(String.format("%s.pitch", path));
+        return new Location(world, x, y, z);
     }
 
     public void setStartPath(String path){

@@ -14,6 +14,7 @@ public interface Settings {
     //General Settings
     int General_MinPlayers = Cookies.getInstance().getSettings().getIntOrSetDefault("MinPlayers", 2);
     int General_MaxPlayers = Cookies.getInstance().getSettings().getIntOrSetDefault("MaxPlayers", 8);
+    String Scoreboard_Title = ChatColor.translateAlternateColorCodes('&', Cookies.getInstance().getSettings().getStringOrSetDefault("Scoreboard.Title", "&6&lCookies"));
 
     //Lobby Settings
     int Lobby_CountdownTime = Cookies.getInstance().getSettings().getIntOrSetDefault("Lobby.Countdown.Time.Default", 30);

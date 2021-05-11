@@ -49,6 +49,9 @@ public class PlayerHandlerListener implements Listener, Messages, Settings {
                 Cookies.getInstance().lobbyCountdown.run();
             }
 
+            Cookies.getInstance().sideboard.setLobbyScoreboard(player, Cookies.getInstance().mapManager.getMapName(Cookies.getInstance().playingMap));
+
+
         }else if(Cookies.getInstance().gameState == GameStates.INGAME) {
             event.setJoinMessage("Ingame Join");
         }
